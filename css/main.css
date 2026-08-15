@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* DTPS - Main Stylesheet */
+
+/* ===== Base ===== */
+@import "base/variables.css";
+@import "base/reset.css";
+@import "base/typography.css";
+
+/* ===== Layouts ===== */
+@import "layouts/container.css";
+@import "layouts/grid.css";
+
+/* ===== Components ===== */
+@import "components/button.css";
+@import "components/header.css";
+@import "components/stats.css";
+@import "components/form.css";
+@import "components/task-list.css";
+@import "components/theme-toggle.css";
+
+/* ===== Utilities ===== */
+@import "utilities/spacing.css";
+@import "utilities/responsive.css";
+
+/* ===== Global Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-inverse);
+}
+
+/* ===== Skip Link ===== */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  z-index: var(--z-tooltip);
+}
+
+.skip-link:focus {
+  top: var(--spacing-2);
+}
+
+/* ===== Focus Ring Override ===== */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ===== Print ===== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

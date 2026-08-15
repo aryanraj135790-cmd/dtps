@@ -1,0 +1,77 @@
+/* ========================================
+   Theme Toggle Component
+   ======================================== */
+
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-200);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-gray-300);
+}
+
+.theme-toggle:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Toggle Slider */
+.theme-toggle .slider {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  transform: translateX(0);
+}
+
+/* Dark Mode State */
+[data-theme="dark"] .theme-toggle {
+  background-color: var(--color-primary);
+}
+
+[data-theme="dark"] .theme-toggle .slider {
+  transform: translateX(28px);
+  background-color: var(--color-white);
+}
+
+/* Icons inside toggle */
+.theme-toggle .icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 12px);
+  left: 6px;
+  pointer-events: none;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.theme-toggle .icons .sun {
+  color: var(--color-warning);
+}
+
+.theme-toggle .icons .moon {
+  color: var(--color-gray-400);
+}
+
+[data-theme="dark"] .theme-toggle .icons .sun {
+  color: var(--color-gray-400);
+}
+
+[data-theme="dark"] .theme-toggle .icons .moon {
+  color: var(--color-warning);
+}

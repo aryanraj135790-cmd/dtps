@@ -8,102 +8,194 @@
       name="description"
       content="A web-based interface for managing distributed tasks and workers."
     />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-      <nav aria-label="Main navigation">
-        <a href="/" aria-label="DTPS Homepage" class="logo">DTPS</a>
-        <ul role="list">
-          <li><a href="#home" aria-current="page">Home</a></li>
-          <li><a href="#tasks">Tasks</a></li>
-          <li><a href="#workers">Workers</a></li>
-          <li><a href="#settings">Settings</a></li>
-        </ul>
-        <button aria-label="User menu" class="user-avatar">JD</button>
-      </nav>
+    <!-- ===== HEADER ===== -->
+    <header role="banner" class="header">
+      <div class="container header-inner">
+        <nav aria-label="Main navigation" class="nav">
+          <a href="/" aria-label="DTPS Homepage" class="logo">DTPS</a>
+
+          <ul role="list" class="nav-list">
+            <li>
+              <a href="#home" aria-current="page" class="nav-link">Home</a>
+            </li>
+            <li><a href="#tasks" class="nav-link">Tasks</a></li>
+            <li><a href="#workers" class="nav-link">Workers</a></li>
+            <li><a href="#settings" class="nav-link">Settings</a></li>
+          </ul>
+
+          <div class="header-actions">
+            <!-- Theme Toggle -->
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Toggle theme"
+              title="Toggle dark/light mode"
+            >
+              <span class="slider"></span>
+              <span class="icons">
+                <span class="sun">☀️</span>
+                <span class="moon">🌙</span>
+              </span>
+            </button>
+
+            <button aria-label="User menu" class="user-avatar">JD</button>
+          </div>
+        </nav>
+      </div>
     </header>
 
+    <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
-      <section aria-labelledby="dashboard-title">
-        <h2 id="dashboard-title">Dashboard</h2>
+      <div class="container">
+        <!-- Dashboard Section -->
+        <section aria-labelledby="dashboard-title" class="py-8">
+          <h2 id="dashboard-title" class="text-2xl font-bold mb-6">
+            Dashboard
+          </h2>
 
-        <div role="group" aria-label="System statistics" class="stats-grid">
-          <article role="article" aria-labelledby="total-tasks-label">
-            <h3 id="total-tasks-label">📋 Total Tasks</h3>
-            <p id="total-tasks-value">0</p>
-          </article>
-          <article role="article" aria-labelledby="pending-tasks-label">
-            <h3 id="pending-tasks-label">⏳ Pending</h3>
-            <p id="pending-tasks-value">0</p>
-          </article>
-          <article role="article" aria-labelledby="completed-tasks-label">
-            <h3 id="completed-tasks-label">✅ Completed</h3>
-            <p id="completed-tasks-value">0</p>
-          </article>
-          <article role="article" aria-labelledby="active-workers-label">
-            <h3 id="active-workers-label">👷 Active Workers</h3>
-            <p id="active-workers-value">0</p>
-          </article>
-        </div>
-      </section>
-      <section aria-labelledby="tasks-title">
-        <h2 id="tasks-title">Task Management</h2>
-
-        <form id="taskForm" method="post" action="#">
-          <div>
-            <label for="taskInput">Task Description</label>
-            <input
-              type="text"
-              id="taskInput"
-              required
-              placeholder="Enter task description..."
-            />
-          </div>
-
-          <div>
-            <label for="taskPriority">Priority</label>
-            <select id="taskPriority" required>
-              <option value="low">Low</option>
-              <option value="medium" selected>Medium</option>
-              <option value="high">High</option>
-              <option value="critical">Critical</option>
-            </select>
-          </div>
-
-          <button type="submit">Add Task</button>
-        </form>
-
-        <div role="region" aria-labelledby="your-tasks-title">
-          <h3 id="your-tasks-title">Your Tasks</h3>
-
-          <fieldset aria-label="Filter tasks by status">
-            <legend class="sr-only">Filter tasks</legend>
-            <button
-              data-filter="all"
-              aria-current="page"
-              aria-controls="taskList"
+          <div role="group" aria-label="System statistics" class="stats-grid">
+            <article
+              role="article"
+              aria-labelledby="total-tasks-label"
+              class="stat-card stat-card-primary"
             >
-              All
-            </button>
-            <button data-filter="pending" aria-controls="taskList">
-              Pending
-            </button>
-            <button data-filter="completed" aria-controls="taskList">
-              Completed
-            </button>
-          </fieldset>
+              <div class="stat-header">
+                <span class="stat-icon">📋</span>
+                <h3 id="total-tasks-label" class="stat-label">Total Tasks</h3>
+              </div>
+              <p id="total-tasks-value" class="stat-value">0</p>
+            </article>
 
-          <ul
-            aria-labelledby="your-tasks-title"
-            id="taskList"
-            aria-live="polite"
-          >
-            <li id="empty-state-message">No tasks yet. Add one above!</li>
-          </ul>
-        </div>
-      </section>
+            <article
+              role="article"
+              aria-labelledby="pending-tasks-label"
+              class="stat-card stat-card-warning"
+            >
+              <div class="stat-header">
+                <span class="stat-icon">⏳</span>
+                <h3 id="pending-tasks-label" class="stat-label">Pending</h3>
+              </div>
+              <p id="pending-tasks-value" class="stat-value">0</p>
+            </article>
+
+            <article
+              role="article"
+              aria-labelledby="completed-tasks-label"
+              class="stat-card stat-card-success"
+            >
+              <div class="stat-header">
+                <span class="stat-icon">✅</span>
+                <h3 id="completed-tasks-label" class="stat-label">Completed</h3>
+              </div>
+              <p id="completed-tasks-value" class="stat-value">0</p>
+            </article>
+
+            <article
+              role="article"
+              aria-labelledby="active-workers-label"
+              class="stat-card stat-card-primary"
+            >
+              <div class="stat-header">
+                <span class="stat-icon">👷</span>
+                <h3 id="active-workers-label" class="stat-label">
+                  Active Workers
+                </h3>
+              </div>
+              <p id="active-workers-value" class="stat-value">0</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Task Management Section -->
+        <section aria-labelledby="tasks-title" class="py-8">
+          <h2 id="tasks-title" class="text-2xl font-bold mb-6">
+            Task Management
+          </h2>
+
+          <!-- Task Form -->
+          <form id="taskForm" method="post" action="#" class="form-inline mb-6">
+            <div class="form-group flex-1">
+              <label for="taskInput" class="form-label">Task Description</label>
+              <input
+                type="text"
+                id="taskInput"
+                class="form-input"
+                required
+                placeholder="Enter task description..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="taskPriority" class="form-label">Priority</label>
+              <select id="taskPriority" class="form-select" required>
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Task</button>
+          </form>
+
+          <!-- Task List -->
+          <div role="region" aria-labelledby="your-tasks-title">
+            <div class="flex items-center justify-between mb-4">
+              <h3 id="your-tasks-title" class="text-xl font-semibold">
+                Your Tasks
+              </h3>
+              <span class="task-count" id="taskCount">0 tasks</span>
+            </div>
+
+            <fieldset aria-label="Filter tasks by status" class="mb-4">
+              <legend class="sr-only">Filter tasks</legend>
+              <div class="flex gap-2">
+                <button
+                  data-filter="all"
+                  aria-current="page"
+                  aria-controls="taskList"
+                  class="btn btn-sm btn-primary"
+                >
+                  All
+                </button>
+                <button
+                  data-filter="pending"
+                  aria-controls="taskList"
+                  class="btn btn-sm btn-secondary"
+                >
+                  Pending
+                </button>
+                <button
+                  data-filter="completed"
+                  aria-controls="taskList"
+                  class="btn btn-sm btn-secondary"
+                >
+                  Completed
+                </button>
+              </div>
+            </fieldset>
+
+            <ul
+              aria-labelledby="your-tasks-title"
+              id="taskList"
+              aria-live="polite"
+              class="task-list"
+            >
+              <li id="empty-state-message" class="task-empty">
+                <div class="empty-icon">📝</div>
+                <p class="empty-text">No tasks yet. Add one above!</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
+    <!-- Our Scripts -->
+    <script src="js/theme.js"></script>
   </body>
 </html>

@@ -1,0 +1,193 @@
+/* ===== Flex Extras ===== */
+.flex-grow {
+  flex-grow: 1 !important;
+}
+.flex-shrink {
+  flex-shrink: 1 !important;
+}
+
+/* ===== Screen Reader Only ===== */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.not-sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* ===== Pointer Events ===== */
+.pointer-events-none {
+  pointer-events: none !important;
+}
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+/* ===== Cursor ===== */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.cursor-default {
+  cursor: default !important;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+.cursor-grab {
+  cursor: grab !important;
+}
+.cursor-grabbing {
+  cursor: grabbing !important;
+}
+
+/* ===== Responsive Extras ===== */
+@media (min-width: 640px) {
+  .sm\:w-full {
+    width: 100% !important;
+  }
+  .sm\:w-auto {
+    width: auto !important;
+  }
+  .sm\:mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .sm\:text-left {
+    text-align: left !important;
+  }
+  .sm\:text-center {
+    text-align: center !important;
+  }
+  .sm\:text-right {
+    text-align: right !important;
+  }
+  .sm\:gap-1 {
+    gap: var(--spacing-1);
+  }
+  .sm\:gap-2 {
+    gap: var(--spacing-2);
+  }
+  .sm\:gap-3 {
+    gap: var(--spacing-3);
+  }
+  .sm\:gap-4 {
+    gap: var(--spacing-4);
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-full {
+    width: 100% !important;
+  }
+  .md\:w-auto {
+    width: auto !important;
+  }
+  .md\:mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .md\:text-left {
+    text-align: left !important;
+  }
+  .md\:text-center {
+    text-align: center !important;
+  }
+  .md\:text-right {
+    text-align: right !important;
+  }
+  .md\:gap-1 {
+    gap: var(--spacing-1);
+  }
+  .md\:gap-2 {
+    gap: var(--spacing-2);
+  }
+  .md\:gap-3 {
+    gap: var(--spacing-3);
+  }
+  .md\:gap-4 {
+    gap: var(--spacing-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-full {
+    width: 100% !important;
+  }
+  .lg\:w-auto {
+    width: auto !important;
+  }
+  .lg\:mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .lg\:text-left {
+    text-align: left !important;
+  }
+  .lg\:text-center {
+    text-align: center !important;
+  }
+  .lg\:text-right {
+    text-align: right !important;
+  }
+  .lg\:gap-1 {
+    gap: var(--spacing-1);
+  }
+  .lg\:gap-2 {
+    gap: var(--spacing-2);
+  }
+  .lg\:gap-3 {
+    gap: var(--spacing-3);
+  }
+  .lg\:gap-4 {
+    gap: var(--spacing-4);
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-full {
+    width: 100% !important;
+  }
+  .xl\:w-auto {
+    width: auto !important;
+  }
+  .xl\:mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .xl\:text-left {
+    text-align: left !important;
+  }
+  .xl\:text-center {
+    text-align: center !important;
+  }
+  .xl\:text-right {
+    text-align: right !important;
+  }
+  .xl\:gap-1 {
+    gap: var(--spacing-1);
+  }
+  .xl\:gap-2 {
+    gap: var(--spacing-2);
+  }
+  .xl\:gap-3 {
+    gap: var(--spacing-3);
+  }
+  .xl\:gap-4 {
+    gap: var(--spacing-4);
+  }
+}
