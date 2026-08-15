@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DTPS - Distributed Task Processing System</title>
+    <meta
+      name="description"
+      content="A web-based interface for managing distributed tasks and workers."
+    />
   </head>
   <body>
-    <!-- Skip Link (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header role="banner">
@@ -25,6 +28,7 @@
     <main id="main-content">
       <section aria-labelledby="dashboard-title">
         <h2 id="dashboard-title">Dashboard</h2>
+
         <div role="group" aria-label="System statistics" class="stats-grid">
           <article role="article" aria-labelledby="total-tasks-label">
             <h3 id="total-tasks-label">📋 Total Tasks</h3>
@@ -42,6 +46,62 @@
             <h3 id="active-workers-label">👷 Active Workers</h3>
             <p id="active-workers-value">0</p>
           </article>
+        </div>
+      </section>
+      <section aria-labelledby="tasks-title">
+        <h2 id="tasks-title">Task Management</h2>
+
+        <form id="taskForm" method="post" action="#">
+          <div>
+            <label for="taskInput">Task Description</label>
+            <input
+              type="text"
+              id="taskInput"
+              required
+              placeholder="Enter task description..."
+            />
+          </div>
+
+          <div>
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority" required>
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+              <option value="critical">Critical</option>
+            </select>
+          </div>
+
+          <button type="submit">Add Task</button>
+        </form>
+
+        <div role="region" aria-labelledby="your-tasks-title">
+          <h3 id="your-tasks-title">Your Tasks</h3>
+
+          <fieldset aria-label="Filter tasks by status">
+            <legend class="sr-only">Filter tasks</legend>
+            <button
+              data-filter="all"
+              aria-current="page"
+              aria-controls="taskList"
+            >
+              All
+            </button>
+            <button data-filter="pending" aria-controls="taskList">
+              Pending
+            </button>
+            <button data-filter="completed" aria-controls="taskList">
+              Completed
+            </button>
+          </fieldset>
+
+          <ul
+            aria-labelledby="your-tasks-title"
+            id="taskList"
+            aria-live="polite"
+          >
+            <li id="empty-state-message">No tasks yet. Add one above!</li>
+          </ul>
         </div>
       </section>
     </main>
