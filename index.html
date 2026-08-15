@@ -23,7 +23,27 @@
     </header>
 
     <main id="main-content">
-      <!-- Content goes here -->
+      <section aria-labelledby="dashboard-title">
+        <h2 id="dashboard-title">Dashboard</h2>
+        <div role="group" aria-label="System statistics" class="stats-grid">
+          <article role="article" aria-labelledby="total-tasks-label">
+            <h3 id="total-tasks-label">📋 Total Tasks</h3>
+            <p id="total-tasks-value">0</p>
+          </article>
+          <article role="article" aria-labelledby="pending-tasks-label">
+            <h3 id="pending-tasks-label">⏳ Pending</h3>
+            <p id="pending-tasks-value">0</p>
+          </article>
+          <article role="article" aria-labelledby="completed-tasks-label">
+            <h3 id="completed-tasks-label">✅ Completed</h3>
+            <p id="completed-tasks-value">0</p>
+          </article>
+          <article role="article" aria-labelledby="active-workers-label">
+            <h3 id="active-workers-label">👷 Active Workers</h3>
+            <p id="active-workers-value">0</p>
+          </article>
+        </div>
+      </section>
     </main>
   </body>
 </html>
